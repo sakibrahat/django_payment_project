@@ -1,0 +1,42 @@
+<!-- store/templates/store/receipt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .receipt {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .receipt p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .receipt p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Receipt</h1>
+    <div class="receipt">
+        <p>Order ID: <strong>{{ order.id }}</strong></p>
+        <p>Total Price: <strong>${{ order.total_price }}</strong></p>
+        <p>Payment Status: <strong>{% if order.payment_status %}Paid{% else %}Pending{% endif %}</strong></p>
+    </div>
+</body>
+</html>
